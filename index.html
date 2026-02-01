@@ -3,22 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <title>Sito semplice</title>
+
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      margin-top: 80px;
+    }
+
+    button {
+      padding: 15px 25px;
+      margin: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    img {
+      margin-top: 20px;
+      max-width: 300px;
+    }
+  </style>
 </head>
+
 <body>
 
-  <h1>Vuoi essere la mia Patata di San Valentino??</h1>
+  <!-- SCHERMATA INIZIALE -->
+  <div id="schermata-iniziale">
+    <h1>QUI LA TUA DOMANDA</h1>
 
-  <button id="uno">Si, certamente scricciolo</button>
-  <button id="due">Aspetta un attimo... ma chi sei? mi vuoi scammare??</button>
+    <button onclick="scelta1()">Pulsante 1</button>
+    <button onclick="scelta2()">Pulsante 2</button>
+  </div>
+
+  <!-- RISULTATO PULSANTE 1 -->
+  <div id="risultato-1" style="display: none;">
+    <h1>Ok brava così</h1>
+    <img src="immagine1.jpg" alt="Immagine scelta 1">
+  </div>
+
+  <!-- RISULTATO PULSANTE 2 -->
+  <div id="risultato-2" style="display: none;">
+    <h1>No, sbagliato</h1>
+    <img src="immagine2.jpg" alt="Immagine scelta 2">
+  </div>
 
   <script>
-    document.getElementById("uno").onclick = function () {
-      alert("siiii tu si che mi conosci Ammore Miiiijio");
-    };
+    function scelta1() {
+      document.getElementById("schermata-iniziale").style.display = "none";
+      document.getElementById("risultato-1").style.display = "block";
+    }
 
-    document.getElementById("due").onclick = function () {
-      alert("Grazie per aver premuto qui, così puoi vedere quanto altro ho fatto per te in questo sito, per farti ridere");
-    };
+    function scelta2() {
+      document.getElementById("schermata-iniziale").style.display = "none";
+      document.getElementById("risultato-2").style.display = "block";
+    }
   </script>
 
 </body>
